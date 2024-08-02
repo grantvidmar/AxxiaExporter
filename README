@@ -11,3 +11,13 @@
 #The axxiaexporter scripts are used when we have the correct file names pulled from the DB. This gives us the ability to search the folder structure, copy them to the new export location, and then rename them with the correct names.
 
 #The prep work for this to work correctly is all in cleaning the data from the DB so that it only contains the information needed in the CSV file that controls the renaming process. 
+
+#The tricky bit is getting the formatting write in the 'update_doclist' CSV file. You need to break the file names and doc types up for each file. 
+
+#title = Actual name of the document
+#original_path = the location in the Axxia Folder structure, this comes straight from the DB.
+#original_name = this is the name that the file is named in the folder structure.
+#doc_type = this is the file extension 
+#new_name = this is a combination of 'title' and 'doc_type' 
+#matter = the matter number the file is associated with
+#new_path = the location that file should be copied to and also have the new name applie to it combines the indicated location + matter number + the new name
