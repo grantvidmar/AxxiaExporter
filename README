@@ -1,0 +1,13 @@
+#This script was written to search a network drive location associated with the program Axxia to facilitate exporting matters.
+
+#Axxia is a older CMS used for case automation. We still had legacy cases in this program and would occationaly need to export them to other firms. The issue was that Axxia does not store its files in a standard mannor and we needed to search for them in the file structure. 
+
+#Axxia would store all of the files in a folder associated with the matter number assigned to the case. But it would not store the file name as the name visible in the program itself. It would use a truncated numerical file name and then use the database to associate it with the correct filename in the database. 
+#This was a problem when we would export the data, the new firm would not get the original file names and just the truncated version. This was only brough to our attention after many years after a mass exodus from our firm. The solution was a simple-ish idea.
+#The biggest issue was that Axxia was not using a SQL DB and it was not easily queried for the correct file names. We had to engage the one person that still knew how to access the old DB and pull the information for us. After that it was easy enough to format the resulting spreadsheet to conver the truncated file names to the correct file names.
+
+#The axxiasearch script is for finding the file locations in the folder structure for a simple flat export of the files without renaming. 
+
+#The axxiaexporter scripts are used when we have the correct file names pulled from the DB. This gives us the ability to search the folder structure, copy them to the new export location, and then rename them with the correct names.
+
+#The prep work for this to work correctly is all in cleaning the data from the DB so that it only contains the information needed in the CSV file that controls the renaming process. 
